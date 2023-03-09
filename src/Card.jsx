@@ -3,8 +3,10 @@
 
 function Card() {
   return (
-    <div>
-      <h2>Esto es un componente</h2>
+    <div id="card">
+      <h2>Card para mostrar valores del formulario</h2>
+        <p>Nombre:{}</p>
+        <p>Animal:{}</p>
     </div>
   );
 }

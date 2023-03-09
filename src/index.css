@@ -1,0 +1,41 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+
+
+#card{
+    color: green;
+    border: 1px solid black;
+    width: 80%;
+    margin: 30px auto;
+}
+
+#msn-error{
+    border: 1px solid black;
+    color: red;
+    width: 80%;
+    margin: 30px auto;
+}
+
+input{
+    width: 300px;
+}
+
+button {
+    border: none;
+    background-color: #eee;
+    color: #222;
+    font-size: 30;
+    font-family: inherit;
+    margin: 10px;
+    padding: 10px 70px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ccc;
+}
+
+
