@@ -9,10 +9,13 @@ function App() {
   //Falta
   // Hacer validaciones
   
+  const [informacion, setInformacion] = useState({}); {/**useState setea un objeto*/}
+
   // funcion dentro el padre "App" que se le pasa como "props" al hijo "Form"
   // las props son de solo lectura, el hijo no puede modificarlas
   const onSubmit = (data) => {
     console.log("data: ", data);
+    setInformacion(data);
   }
   
   return (
@@ -22,8 +25,12 @@ function App() {
         titulo="Formulario animal"
       />
 
+      {informacion && 
+        <Card nombre={informacion.nombre} animal={informacion.animal}/>
+      
+      }
+
       <p id="msn-error" >Por favor chequea que la informacion sea correcta</p>
-      <Card nombre="{nombre}" animal="{animal}"/>
       
       <h5>Wilson Alzate</h5>
     </div>
