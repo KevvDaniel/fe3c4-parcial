@@ -5,12 +5,10 @@ function App() {
   //Aqui deberias agregar los estados y los handlers para los inputs
   
   const[nombre, setNombre] = useState ("")
-  const[animal, setAnimal] = useState ("")
 
   const handleChange = (e) => {
     if(e.target.value.length > 3){
-      console.log(e.target.value);
-      setNombre(e.target.value);
+      console.log(e.target.value)
     }
   }
   const handleChangeAnimal = (e) => {
@@ -28,7 +26,7 @@ function App() {
           id="name"
           type="text" 
           name="nombre"
-          value={nombre}
+          //value={nombre}
           placeholder="Nombre (mayor a 3 caracteres"
           onChange={handleChange}
           />
