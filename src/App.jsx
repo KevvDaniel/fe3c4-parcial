@@ -1,58 +1,30 @@
 import { useState } from 'react'
 import Card from './Card.jsx'
+import Form from './components/form/index.jsx';
 
 function App() {
   //Aqui deberias agregar los estados y los handlers para los inputs
   
-  const[nombre, setNombre] = useState ("");
-  const[animal, setAnimal] = useState ("");
+  // ----- VER VIDEO 1:24:15 ---------------//
+  //Falta
+  // Hacer validaciones
   
-  const handleChange = (e) => {
-    //Hacer validaciones
-    //if(e.target.value.length > 3){}
-    //console.log(e.target.value);
-    setNombre(e.target.value);
+  // funcion dentro el padre "App" que se le pasa como "props" al hijo "Form"
+  // las props son de solo lectura, el hijo no puede modificarlas
+  const onSubmit = (data) => {
+    console.log("data: ", data);
   }
-
-  const handleChangeAnimal = (e) => {
-    setAnimal(e.target.value);
-  }
-
-  // console.log("valor del nombre es: ", nombre);
-  // console.log("valor del animal es: ", animal);
-
+  
   return (
     <div className="App">
-      <h1>Formulario</h1>
-      <form>{/* aqui deberias escribir tu codigo */}
-        <input 
-          id="name"
-          type="text" 
-          name="nombre"
-          value={nombre}
-          placeholder="Nombre (mayor a 3 caracteres)"
-          onChange={handleChange}
-          />
-        <br />
+      <Form 
+        onSubmit={onSubmit} 
+        titulo="Formulario animal"
+      />
 
-        <input
-          id="animal"
-          type="text" 
-          name="animal" 
-          value={animal}
-          placeholder="Animal favorito (mayor a 6 caracteres)"
-          onChange={handleChangeAnimal}
-          />
-        <br />
-
-        <button type="submit" value="Enviar">
-          Enviar
-        </button>
-
-        <p id="msn-error" >Por favor chequea que la informacion sea correcta</p>
-        <Card/>
+      <p id="msn-error" >Por favor chequea que la informacion sea correcta</p>
+      <Card nombre="{nombre}" animal="{animal}"/>
       
-      </form>
       <h5>Wilson Alzate</h5>
     </div>
   );
