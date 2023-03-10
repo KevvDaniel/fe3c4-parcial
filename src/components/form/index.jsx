@@ -55,8 +55,9 @@ function Form({onSubmit, titulo}) {
                 onChange={handlerChangeAnimal}
             />
             <br />
+            <input id="btn-enviar" type="submit" />
 
-            <input type="submit" />
+            
         </form>
     )
 }

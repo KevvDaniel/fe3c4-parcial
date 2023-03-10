@@ -1,21 +1,31 @@
 import { useState } from 'react'
-import Card from './Card.jsx'
-import Form from './components/form/index.jsx';
+import Card from './components/Card';
+import Form from './components/form';
 
 function App() {
   //Aqui deberias agregar los estados y los handlers para los inputs
   
-  // ----- VER VIDEO 1:24:15 ---------------//
+  // ----- VER VIDEO 1:50:03 ---------------//
   //Falta
   // Hacer validaciones
   
   const [informacion, setInformacion] = useState({}); {/**useState setea un objeto*/}
-
+  const [isMensajeError, setMensajeError] = useState(); {/**useState setea un objeto*/}
+  
   // funcion dentro el padre "App" que se le pasa como "props" al hijo "Form"
   // las props son de solo lectura, el hijo no puede modificarlas
   const onSubmit = (data) => {
-    console.log("data: ", data);
-    setInformacion(data);
+    if (data.nombre.length >= 3 
+      && data.animal.length >= 6){
+        // si cumple la validacion, actualiza el estado de la "informacion"
+        console.log("data si: ", data);
+        setInformacion(data);
+        setMensajeError("false")
+      }else{
+        setMensajeError("true")
+        console.log("data no: ", data);
+
+    }
   }
   
   return (
@@ -23,15 +33,15 @@ function App() {
       <Form 
         onSubmit={onSubmit} 
         titulo="Formulario animal"
+        isMensajeError={isMensajeError}
+        informacion={informacion}
       />
-
-      {informacion && 
-        <Card nombre={informacion.nombre} animal={informacion.animal}/>
-      
-      }
-
-      <p id="msn-error" >Por favor chequea que la informacion sea correcta</p>
-      
+      <br />
+      <Card
+        isMensajeError={isMensajeError}
+        informacion={informacion}
+        />
+      <br />
       <h5>Wilson Alzate</h5>
     </div>
   );
