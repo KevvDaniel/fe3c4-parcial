@@ -1,5 +1,5 @@
-# Parcial de Front End 3 - React, Componentes, Formulario y validaciones
-Creacion de formulario con validaciones de campos. Elaborada con componentes de React
+# Formulario con validaciones - React
+Creacion de formulario con validaciones de campos. Elaborada con componentes de React.\
 Trabajo desarrollado como examen parcial de Front End 3, en el Certified Tech Developer en Digital House. 2023.
 
 ## Ver la presentación!
