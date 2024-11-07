@@ -1,6 +1,3 @@
-//Este componente deberia recibir por props y mostrar en pantalla la informacion
-//que envia el usuario
-
 import MsnError from "./MsnError";
 import MsnCorrecto from "./MsnCorrecto";
 
@@ -14,7 +11,7 @@ function Card({isMensajeError, informacion}) {
     {isMensajeError=="false" &&
       <MsnCorrecto
         nombre={informacion.nombre}
-        animal={informacion.animal}
+        mascota={informacion.mascota}
       />
     }
     </>
